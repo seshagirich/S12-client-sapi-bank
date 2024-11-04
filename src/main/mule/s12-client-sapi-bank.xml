@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="349cab9f-fb8b-4f98-aeb3-35c97093695b" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="s12-client-sapi-bankFlow" doc:id="c069c134-28e5-4ba0-8a5f-f68f15243451" >
+		<http:listener doc:name="/test" doc:id="b18b092b-a421-4e75-94a6-5f57c021c4da" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value='#[["start"]]' doc:name='["start"]' doc:id="94d07f42-7235-41b6-a6cd-620b0fc3f0a1" />
+	</flow>
+</mule>
